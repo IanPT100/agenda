@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Listar Cursos</title>
+</head>
+<body>
+
+<h1>Lista de Cursos</h1>
+
+<table border="1">
+    <tr>
+        <th>Nome</th>
+        <th>Carga Horária</th>
+        <th>Investimento</th>
+    </tr>
+    {% for curso in cursos %}
+    <tr>
+        <td>{{ curso.nome }}</td>
+        <td>{{ curso.carga_horaria }}</td>
+        <td>{{ curso.investimento }}</td>
+        <td><a href="{% url 'editar_curso' curso.id %}">Editar</a>
+            <a href="#">Excluir</a></td>
+    </tr>
+    {% endfor %}
+</table>
+
+</body>
+</html>
